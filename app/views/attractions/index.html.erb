@@ -1,0 +1,38 @@
+<ul>
+  <li class="title">
+    <div class="attraction__col">
+      <p>Name</p>
+    </div>
+    <div class="attraction__col">
+      <p>Price</p>
+    </div>
+    <div class="attraction__col">
+      <p>Details</p>
+    </div>
+  </li>
+  <% @attractions.each do |attraction| %>
+    <li>
+      <div class="attraction__col">
+        <p><%= attraction.name %></p>
+      </div>
+      <div class="attraction__col">
+        <p><%= "#{attraction.tickets} tickets" %></p>
+      </div>
+      <div class="attraction__col">
+        <% if current_user.admin %>
+          <p><%= link_to "Show #{attraction.name}", attraction %></p>
+        <% else %>
+          <p><%= link_to "Go on #{attraction.name}", attraction %></p>
+        <% end %>
+      </div>
+    </li>
+  <% end %>
+</ul>
+
+<% if @user %>
+  <p>
+    <%= link_to "Back to profile", @user, {:class => "btn btn-primary"} %>
+  </p>
+<% else %>
+  <p><%= link_to 'New Attraction', new_attraction_path %></p>
+<% end %>

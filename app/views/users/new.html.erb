@@ -1,0 +1,39 @@
+<%= form_for @user do |f| %>
+  <fieldset>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </fieldset>
+
+  <fieldset>
+    <%= f.label :height, 'Height (in inches)' %>
+    <%= f.number_field :height, min: 1 %>
+  </fieldset>
+
+  <fieldset>
+    <%= f.label :happiness, 'How happy are you? (1-5 scale)' %>
+    <%= f.number_field :happiness, min: 1, max: 5 %>
+  </fieldset>
+
+  <fieldset>
+    <%= f.label :nausea, 'How nauseious are you? (1-5 scale)' %>
+    <%= f.number_field :nausea, min: 1, max: 5 %>
+  </fieldset>
+
+  <fieldset>
+    <%= f.label :tickets, 'How many dollars are in your pocket?' %>
+    <%= f.number_field :tickets, min: 0 %>
+  </fieldset>
+
+  <fieldset>
+    <%= f.label :admin, 'Check box if you are a theme park owner' %>
+    <%= f.check_box :admin %>
+  </fieldset>
+
+  <fieldset>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </fieldset>
+
+  <%= f.submit 'Create User' %>
+
+<% end %>

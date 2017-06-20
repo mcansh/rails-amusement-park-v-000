@@ -1,0 +1,25 @@
+// Place all the styles related to the attractions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+form label {
+  display: block;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+ul > li {
+  display: flex;
+}
+
+ul > li.title {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.attraction__col {
+  width: 33%;
+  text-align: center;
+}
